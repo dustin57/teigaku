@@ -1,0 +1,189 @@
+
+html, body, h1, h2, h3, a, p, ul, li, ol, div, section, article, form, label, header{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background: #EEEEEE;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  counter-reset: chapter;
+}
+
+.container {
+  width: 95vw;
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+header {
+  font-size: 2rem;
+  margin: 20px;
+  padding: 30px;
+  border-bottom: 1px solid gray;
+  text-align: center;
+}
+
+.calcArea {
+  text-align: center;
+}
+
+.sum {
+  font-size: 1.8rem;
+  margin: 30px 0 20px 0;
+}
+
+.count-avg {
+  margin-bottom: 30px;
+}
+
+#count {
+  margin-right: 3vw;
+}
+
+.btnArea {
+  text-align: center;
+  margin: 20px;
+}
+
+button {
+  margin: auto 2vw;
+  outline: none;
+  cursor: pointer;
+  padding: 3px 10px;
+  background: #fff;
+  border: solid 1px gray;
+  border-radius: 3px;
+}
+
+button:hover {
+  background: gray;
+  color: white;
+}
+
+.listArea {
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  width: 100%;
+}
+
+.subsc {
+  border: solid gray 1px;
+  border-radius: 5px;
+  width: 100%;
+  transition: 0.3s;
+  padding: 15px 10px;
+  margin: 10px 10px;
+}
+.edit {
+  width: 85%;
+}
+.title {
+  counter-increment : chapter;
+  margin: 0 20px 0 20px;
+}
+.title::before {
+  content: counter(chapter)".\00a0\00a0\00a0";
+  padding-right: 10px;
+}
+.price {
+  margin: 0 20px 0 auto;
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.xxx {
+  font-size: 2.5rem;
+  font-weight: lighter;
+  margin: 18px 20px 0 0;
+  cursor: pointer;
+}
+
+form {
+  width: 95vw;
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid gray;
+  z-index: 2;
+  text-align: center;
+}
+
+form > * {
+  margin: 3px;
+}
+
+#template {
+  display: none;
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+footer {
+  padding: 10px 50px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 500px) {
+
+  .container {
+    width: 80vw;
+  }
+  .subsc {
+    padding: 15px 20px;
+    margin: 10px 20px;
+  }
+  form {
+    width: 60vw;
+    padding: 20px;
+  }
+  form > * {
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  form {
+    width: 400px;
+  }
+}
