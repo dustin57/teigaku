@@ -9,8 +9,8 @@ class Subscriptions {
     $this->_createToken();
 
     try {
-      $this->_db = new \PDO($dsn,$user,$password,$options);
-      // $this->_db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+      $this->_db = new \PDO($dsn,$user,$password/*,$options*/);
+      $this->_db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     } catch (\PDOException $e) {
       echo $e->getMessage();
       exit;
