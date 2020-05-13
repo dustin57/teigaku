@@ -10,7 +10,7 @@ class Subscriptions {
 
     try {
       $this->_db = new \PDO($dsn,$user,$password,$options);
-      return $dbh;
+      return $this->_db;
     } catch (\PDOException $e) {
       echo $e->getMessage();
       exit;
