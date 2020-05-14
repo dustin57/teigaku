@@ -10,7 +10,7 @@ class Subscriptions {
     $this->_createToken();
 
     try {
-      $this->_dbConnect();
+      $this->_db = new \PDO(DSN, DB_USERNAME, DB_PASSWORD);
     } catch (\PDOException $e) {
       echo $e->getMessage();
       exit;
@@ -22,21 +22,6 @@ class Subscriptions {
       $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(16));
     }
   }
-
-  private function _dbConnect() {
-  $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
-  $db['dbname'] = ltrim($db['path'], '/');
-  $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
-  $user = $db['user'];
-  $password = $db['pass'];
-  $options = array(
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
-  );
-  $dbh = new PDO($dsn,$user,$password,$options);
-  return $dbh;
-}
 
   public function getAll() {
     $stmt = $this->_db->query("select * from list order by id desc");
