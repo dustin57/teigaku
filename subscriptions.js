@@ -75,6 +75,7 @@
         mode: 'create',
         token: $('#token').val()
       }, function(res) {
+        $('#new_title').val('').focus();
         const $li = $('#template').clone();
         $li
           .attr('id', 'subsc_' + res.id)
@@ -83,7 +84,6 @@
           .end()
           .find('.price').text('¥ ' + price.replace(/(\d)(?=(\d\d\d)+$)/g, '$1,'));
         $('#lists').prepend($li.css('display', 'none').fadeIn(500));
-        $('#new_title').val('').focus();
         $('#sum').html(res.sum);
         $('#count').html(res.count);
         $('#avg').html(res.avg);
