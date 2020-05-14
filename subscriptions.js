@@ -1,6 +1,6 @@
 'use strict'
 {
-  
+
   const hidden = document.getElementById('hidden');
   const test = document.getElementById('test');
   const form = document.querySelector('form');
@@ -64,7 +64,7 @@
 
 
   $(function() {
-    //create
+    //add
     $('#new_subsc_form').on('submit', function() {
       const title = $('#new_title').val();
       const price = $('#new_price').val();
@@ -82,7 +82,8 @@
           .find('.title').text(title)
           .end()
           .find('.price').text('¥ ' + price.replace(/(\d)(?=(\d\d\d)+$)/g, '$1,'));
-        $('#lists').prepend($li.css('display', 'none').fadeIn());
+        $('#lists').prepend($li.css('display', 'none').fadeIn(500));
+        $('#new_title').val('').focus();
         $('#sum').html(res.sum);
         $('#count').html(res.count);
         $('#avg').html(res.avg);
@@ -100,7 +101,7 @@
         mode: 'delete',
         token: $('#token').val()
       }, function(res) {
-        $('#subsc_' + id).fadeOut(800);
+        $('#subsc_' + id).fadeOut(500);
         $('#sum').html(res.sum);
         $('#count').html(res.count);
         $('#avg').html(res.avg);

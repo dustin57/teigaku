@@ -2,8 +2,6 @@
 
 session_start();
 
-require_once(__DIR__ . '/config.php');
-require_once(__DIR__ . '/functions.php');
 require_once(__DIR__ . '/Subscriptions.php');
 
 $subscApp = new \MyApp\Subscriptions();

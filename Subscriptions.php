@@ -5,7 +5,6 @@ namespace MyApp;
 class Subscriptions {
   private $_db;
 
-
   public function __construct() {
     $this->_createToken();
 
