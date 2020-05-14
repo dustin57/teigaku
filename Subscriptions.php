@@ -10,7 +10,7 @@ class Subscriptions {
     $this->_createToken();
 
     try {
-      $this->_db = new \PDO(DSN, DB_USERNAME, DB_PASSWORD);
+      $this->_db = new \PDO($dsn,$user,$password,$options);
     } catch (\PDOException $e) {
       echo $e->getMessage();
       exit;
