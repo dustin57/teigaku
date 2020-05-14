@@ -76,7 +76,9 @@ function h($s) {
     <footer>©︎ TEIGAKU</footer>
   </div>
   <input type="hidden" id="token" value="<?= h($_SESSION['token']); ?>">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="subscriptions.js"></script>
+  
 </body>
 </html>

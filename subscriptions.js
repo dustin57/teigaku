@@ -75,6 +75,7 @@
         mode: 'create',
         token: $('#token').val()
       }, function(res) {
+        $('#new_price').val('');
         $('#new_title').val('').focus();
         const $li = $('#template').clone();
         $li
